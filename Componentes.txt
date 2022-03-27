@@ -1,0 +1,46 @@
+//Paginação com controlador
+import Pagination from '@mui/material/Pagination';
+import Typography from '@mui/material/Typography';
+<Typography>Page: {page}</Typography>
+<Pagination count={10} page={page} onChange={handleChange} />
+
+//ícone de pesquisa
+import SearchIcon from '@mui/icons-material/Search';
+
+//ícone de pokebola
+import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
+
+//card simples
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+<Card variant="outlined">
+  <CardContent>
+
+  </CardContent>
+</Card>
+
+//modal
+export default function BasicModal() {
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
+
+  return (
+    <div>
+      <Button onClick={handleOpen}>Open modal</Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+      >
+        <Box sx={style}>
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Text in a modal
+          </Typography>
+          <Typography id="modal-modal-description" sx={{ mt: 2 }}>
+            Duis mollis, est non commodo luctus, nisi erat porttitor ligula.
+          </Typography>
+        </Box>
+      </Modal>
+    </div>
+  );
+}
